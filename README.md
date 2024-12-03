@@ -1,9 +1,19 @@
 # WhisperX API(Dockerized)
 
-Instead of installing the WhisperX model locally, you can run it as a Docker container. This setup requires only two prerequisites on your system:
+Instead of installing the WhisperX model locally, you can run it as a Docker container. This setup requires only tree prerequisites on your system:
 
 - **CUDA 12.4**  
   Download: https://developer.nvidia.com/cuda-12-4-0-download-archive
+
+- **CDUNN 8.9.7** \
+Installation Guide:
+    ```bash
+    wget https://developer.download.nvidia.com/compute/cudnn/redist/cudnn/linux-x86_64/cudnn-linux-x86_64-8.9.7.29_cuda12-archive.tar.xz && \
+    tar -xvf cudnn-linux-x86_64-8.9.7.29_cuda12-archive.tar.xz && \
+    cp -r cudnn-linux-x86_64-8.9.7.29_cuda12-archive/include/* /usr/local/cuda/include && \
+    cp -r cudnn-linux-x86_64-8.9.7.29_cuda12-archive/lib/* /usr/local/cuda/lib64 && \
+    echo 'export LD_LIBRARY_PATH=/usr/local/cuda:/usr/local/cuda' >> ~/.bashrc
+    ```
   
 - **NVIDIA Container Toolkit**  
   Installation Guide: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
