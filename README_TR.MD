@@ -1,6 +1,6 @@
 # WhisperX API (Dockerized)
 
-WhisperX modelini localinize kurmak yerine, Docker konteyneri olarak çalıştırabilirsiniz. Bu kurulum için sisteminizde yalnızca iki ön koşul gereklidir:
+WhisperX modelini localinize kurmak yerine, Docker konteyneri olarak çalıştırabilirsiniz. Bu kurulum için sisteminizde yalnızca üç ön koşul gereklidir:
 
 - **CUDA 12.4**  
   İndirme: https://developer.nvidia.com/cuda-12-4-0-download-archive
@@ -12,6 +12,7 @@ WhisperX modelini localinize kurmak yerine, Docker konteyneri olarak çalıştı
     tar -xvf cudnn-linux-x86_64-8.9.7.29_cuda12-archive.tar.xz && \
     cp -r cudnn-linux-x86_64-8.9.7.29_cuda12-archive/include/* /usr/local/cuda/include && \
     cp -r cudnn-linux-x86_64-8.9.7.29_cuda12-archive/lib/* /usr/local/cuda/lib64 && \
+    chmod a+r /usr/local/cuda/lib64/* && \
     echo 'export LD_LIBRARY_PATH=/usr/local/cuda:/usr/local/cuda' >> ~/.bashrc
     ```
   

@@ -12,6 +12,7 @@ Installation Guide:
     tar -xvf cudnn-linux-x86_64-8.9.7.29_cuda12-archive.tar.xz && \
     cp -r cudnn-linux-x86_64-8.9.7.29_cuda12-archive/include/* /usr/local/cuda/include && \
     cp -r cudnn-linux-x86_64-8.9.7.29_cuda12-archive/lib/* /usr/local/cuda/lib64 && \
+    chmod a+r /usr/local/cuda/lib64/* && \
     echo 'export LD_LIBRARY_PATH=/usr/local/cuda:/usr/local/cuda' >> ~/.bashrc
     ```
   
