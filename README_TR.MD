@@ -31,12 +31,12 @@ Diğer tüm bağımlılıklar Docker konteynerine dahil edilmiştir.
 
 2. Docker imajını oluşturun:
     ```bash
-    docker build -t whisperx-flask-api .
+    sudo docker build -t whisperx_api_image .
     ```
 
 3. Konteyneri çalıştırın:
     ```bash
-    docker run --gpus all -d -p 5000:5000 whisperx-flask-api
+    sudo docker run -p 5000:5000 --gpus all --name whisperx_api whisperx_api_image
     ```
 
 ## API'yi Test Etme

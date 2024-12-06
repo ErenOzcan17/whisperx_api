@@ -31,12 +31,12 @@ All other dependencies are included in the Docker container.
 
 2. Build the Docker image:
     ```bash
-    docker build -t whisperx-flask-api .
+    sudo docker build -t whisperx_api_image .
     ```
 
 3. Run the container:
     ```bash
-    docker run --gpus all -d -p 5000:5000 whisperx-flask-api
+    sudo docker run -p 5000:5000 --gpus all --name whisperx_api whisperx_api_image
     ```
 
 ## Testing the API
