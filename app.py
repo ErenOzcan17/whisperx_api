@@ -7,7 +7,6 @@ import os
 
 app = Flask(__name__)
 device = "cuda"
-model = whisperx.load_model("medium", device, compute_type="float16")
 
 @app.route('/', methods=['POST'])
 def transcribe_and_diarize():
@@ -22,10 +21,12 @@ def transcribe_and_diarize():
 
     try:
         # transcription
+        model = whisperx.load_model("medium", device, compute_type="float16")
         audio = whisperx.load_audio(audio_path)
         result = model.transcribe(audio, batch_size=16)
 
         # purge memory
+        del model
         gc.collect()
         torch.cuda.empty_cache()
 
@@ -39,7 +40,7 @@ def transcribe_and_diarize():
         torch.cuda.empty_cache()
 
         # diarization
-        diarize_model = whisperx.DiarizationPipeline(use_auth_token="<hf_token>", device=device)
+        diarize_model = whisperx.DiarizationPipeline(use_auth_token="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", device=device)
         diarize_segments = diarize_model(audio)
         result = whisperx.assign_word_speakers(diarize_segments, result)
 
