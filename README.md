@@ -44,4 +44,4 @@ All other dependencies are included in the Docker container.
 Once the container is up and running, you can test it by sending a `.wav` file to the transcription endpoint:
 
 ```bash
-curl -X POST -F "audio=@audio.wav" http://127.0.0.1:5000/transcribe
+curl -X POST -F "audio=@audio.wav" http://127.0.0.1:5000/

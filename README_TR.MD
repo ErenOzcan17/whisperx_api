@@ -44,4 +44,4 @@ Diğer tüm bağımlılıklar Docker konteynerine dahil edilmiştir.
 Konteyner çalıştıktan sonra, transkripsiyon uç noktasına bir `.wav` dosyası göndererek API'yi test edebilirsiniz:
 
 ```bash
-curl -X POST -F "audio=@audio.wav" http://127.0.0.1:5000/transcribe
+curl -X POST -F "audio=@audio.wav" http://127.0.0.1:5000/
