@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN wget https://developer.download.nvidia.com/compute/cudnn/redist/cudnn/linux-x86_64/cudnn-linux-x86_64-8.9.7.29_cuda12-archive.tar.xz && \
     tar -xvf cudnn-linux-x86_64-8.9.7.29_cuda12-archive.tar.xz && \
+    rm cudnn-linux-x86_64-8.9.7.29_cuda12-archive.tar.xz && \
     cp -r cudnn-linux-x86_64-8.9.7.29_cuda12-archive/include/* /usr/local/cuda/include && \
     cp -r cudnn-linux-x86_64-8.9.7.29_cuda12-archive/lib/* /usr/local/cuda/lib64 && \
     chmod a+r /usr/local/cuda/lib64/* && \
